@@ -28,12 +28,12 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Package portable exe
+      - name: Package installer
         run: npx electron-builder --win --publish never
 
       - name: Upload release assets
         uses: softprops/action-gh-release@v2
         with:
-          files: dist/Skrybbl.exe
+          files: dist/Skrybbl-Setup.exe
           draft: false
           generate_release_notes: true

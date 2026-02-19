@@ -19,11 +19,13 @@ win:
   executableName: Skrybbl
   icon: resources/icon.ico
   target:
-    - target: portable
+    - target: nsis
       arch:
         - x64
-portable:
-  artifactName: Skrybbl.${ext}
+nsis:
+  artifactName: Skrybbl-Setup.${ext}
+  oneClick: true
+  perMachine: false
 afterPack: ./scripts/after-pack.js
 fileAssociations:
   - ext: skrybbl
