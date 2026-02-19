@@ -1,0 +1,10 @@
+node_modules/
+out/
+dist/
+*.exe
+.DS_Store
+Thumbs.db
+nul
+stdout.log
+stderr.log
+.claude/

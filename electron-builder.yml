@@ -1,0 +1,34 @@
+appId: com.skrybbl.app
+productName: Skrybbl
+directories:
+  buildResources: resources
+  output: dist
+files:
+  - out/**/*
+  - package.json
+  - node_modules/**/*
+  - '!node_modules/**/*.{md,ts,map}'
+  - '!**/.vscode/*'
+  - '!src/*'
+  - '!electron.vite.config.{js,ts,mjs,cjs}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+extraResources:
+  - from: resources/icon.png
+    to: icon.png
+win:
+  executableName: Skrybbl
+  icon: resources/icon.ico
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  artifactName: Skrybbl-Setup.${ext}
+  oneClick: true
+  perMachine: false
+afterPack: ./scripts/after-pack.js
+fileAssociations:
+  - ext: skrybbl
+    name: Skrybbl Notebook
+    description: Skrybbl Notebook File
+    role: Editor
